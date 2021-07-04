@@ -15,6 +15,7 @@ function createBulkTodos() {
   return array;
 }
 
+// 8.3 useReducer (p.194)
 function todoReducer(todos, action) {
   switch (action.type) {
     case 'INSERT':
@@ -30,6 +31,7 @@ function todoReducer(todos, action) {
   }
 }
 const App = () => {
+  // 8.3 useReducer (p.194), 11.5 onToggle, onRemove 함수가 바뀌지 않게 하기 (p.296)
   const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos);
 
   const nextId = useRef(4);

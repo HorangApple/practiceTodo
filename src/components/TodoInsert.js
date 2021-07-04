@@ -3,7 +3,10 @@ import { MdAdd } from 'react-icons/md';
 import './TodoInsert.scss';
 
 const TodoInsert = ({ onInsert }) => {
+  // 8.1 useState (p.190)
   const [value, setValue] = useState('');
+
+  // 8.5 useCallback (p.208)
   const onChange = useCallback((e) => {
     setValue(e.target.value);
   }, []);

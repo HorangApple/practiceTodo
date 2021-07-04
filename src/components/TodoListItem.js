@@ -9,6 +9,7 @@ import './TodoListItem.scss';
 
 const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
   const { id, text, checked } = todo;
+  // 9.3.1 classnames (p.238)
   return (
     <div className="TodoListItem-virtualized" style={style}>
       <div className="TodoListItem">
@@ -27,6 +28,7 @@ const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
   );
 };
 
+// 11.4 React.memo를 사용하여 컴포넌트 성능 최적화 (p.295)
 export default React.memo(
   TodoListItem,
   (prevProps, nextProps) => prevProps.todo === nextProps.todo,
